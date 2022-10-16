@@ -11,6 +11,7 @@ sudo systemctl enable endlessh
 sudo mkdir -p /etc/endlessh
 cd /etc/endlessh
 sudo chown $USER:$USER -R /etc/endlessh
+sudo chmod 774 -R /etc/endlessh
 curl https://raw.githubusercontent.com/sunstep/endlessh/master/config --output config 
 sudo systemctl start endlessh
 
