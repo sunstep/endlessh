@@ -10,6 +10,7 @@ sudo cp util/endlessh.service /etc/systemd/system
 sudo systemctl enable endlessh
 sudo mkdir -p /etc/endlessh
 cd /etc/endlessh
+sudo chown $USER:$USER -R /etc/endlessh
 curl https://raw.githubusercontent.com/sunstep/endlessh/master/config --output config 
 sudo systemctl start endlessh
 
