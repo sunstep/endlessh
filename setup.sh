@@ -1,4 +1,4 @@
-#!/usr/bin/zsh
+#! /bin/sh
 Echo "Installing dependencies, building and moving binary"
 sudo apt install libc6-dev
 make
