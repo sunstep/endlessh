@@ -20,7 +20,7 @@ sudo netstat -tulpn | grep endlessh
 Echo "Endlessh not bound to port 22, fixing it now."
 cd /etc/systemd/system/
 sudo mv endlessh.service endlessh.service.backup
-curl https://raw.githubusercontent.com/sunstep/endlessh/master/endlessh.service --output endlessh.service
+sudo curl https://raw.githubusercontent.com/sunstep/endlessh/master/endlessh.service --output endlessh.service
 sudo setcap 'cap_net_bind_service=+ep' /usr/local/bin/endlessh
 sudo systemctl daemon-reload && sudo systemctl restart endlessh
 sudo netstat -tulpn | grep endlessh
