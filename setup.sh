@@ -23,3 +23,6 @@ sudo mv endlessh.service endlessh.service.backup
 curl https://raw.githubusercontent.com/sunstep/endlessh/master/endlessh.service --output endlessh.service
 sudo setcap 'cap_net_bind_service=+ep' /usr/local/bin/endlessh
 sudo systemctl daemon-reload && sudo systemctl restart endlessh
+sudo netstat -tulpn | grep endlessh
+Echo "Port should now be listening to port 22, if not manually fix it."
+Echo "If endlessh is listening to port 22, the set up should be complete now."
