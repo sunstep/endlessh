@@ -1,21 +1,21 @@
-#! /bin/sh
-Echo "Installing dependencies, building and moving binary"
-sudo apt install libc6-dev
-make
+cd ~/to-install/endlessh (path-to-this-git-clone/endlessh)
+sudo apt install libc6-dev gcc make
+make (exec in root of this git folder)
 sudo mv endlessh /usr/local/bin
 which endlessh
 
-Echo "Setting up Endlessh" 
-sudo cp util/endlessh.service /etc/systemd/system
+sudo cp endlessh.service /etc/systemd/system
 sudo systemctl enable endlessh
 sudo mkdir -p /etc/endlessh
 cd /etc/endlessh
-sudo chown $USER:$USER -R /etc/endlessh
-sudo chmod 774 -R /etc/endlessh
-curl https://raw.githubusercontent.com/sunstep/endlessh/master/config --output config 
+sudo curl https://raw.githubusercontent.com/sunstep/endlessh/master/config --output config 
 sudo systemctl start endlessh
 
+#Test if it is listening to port 22
 sudo netstat -tulpn | grep endlessh
+
+
+# Manual steps for fixing port <1024 not working. Not necessary if using the steps above.
 
 Echo "Endlessh not bound to port 22, fixing it now."
 cd /etc/systemd/system/
