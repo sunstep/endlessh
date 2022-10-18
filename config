@@ -1,5 +1,5 @@
 # The port on which to listen for new SSH connections.
-port 22
+Port 22
 
 # The endless banner is sent one line at a time. This is the delay
 # in milliseconds between individual lines.
