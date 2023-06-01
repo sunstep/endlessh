@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 # Install required dependencies
-sudo apt install libc6-dev gcc make -y
+sudo apt install libc6-dev gcc make curl netstat -y
 
 # Build endlessh
 make
