@@ -1,9 +1,5 @@
 #!/bin/zsh
 
-# Change to the directory containing the endlessh source code
-git clone https://github.com/sunstep/endlessh.git
-cd endlessh
-
 # Install required dependencies
 sudo apt install libc6-dev gcc make
 
